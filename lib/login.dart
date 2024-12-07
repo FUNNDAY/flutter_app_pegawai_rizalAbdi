@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:praktikum_android/dashboard.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -12,13 +14,13 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Aplikasi',
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
         flexibleSpace: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [Colors.blue, Colors.purple]),
           ),
         ),
@@ -26,7 +28,7 @@ class _LoginState extends State<Login> {
           onPressed: () {
             print('ini adalah tombol menu');
           },
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           color: Colors.white,
         ),
         actions: [
@@ -34,29 +36,29 @@ class _LoginState extends State<Login> {
             onPressed: () {
               print('ini setting');
             },
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
             color: Colors.white,
           ),
           IconButton(
             onPressed: () {
               print('ini tombol cari');
             },
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             color: Colors.white,
           ),
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(50.0),
+        padding: const EdgeInsets.all(50.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: 100,
               backgroundImage: NetworkImage(
-                  'https://cdn.7tv.app/emote/01FBPSF34G000CGY5JPH61WCPK/4x.webp'),
+                  'https://cdn.7tv.app/emote/01FXTA6FTG000B09ZDT0P8R347/4x.webp'),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TextField(
@@ -64,9 +66,9 @@ class _LoginState extends State<Login> {
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.0)),
                   labelText: 'Username',
-                  prefixIcon: Icon(Icons.person)),
+                  prefixIcon: const Icon(Icons.person)),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             TextField(
@@ -75,23 +77,23 @@ class _LoginState extends State<Login> {
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.0)),
                   labelText: 'Password',
-                  prefixIcon: Icon(Icons.password)),
+                  prefixIcon: const Icon(Icons.password)),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ElevatedButton(
                 onPressed: () {
-                  print('Ini tombol masuk');
+                  Get.offAll(const Dashboard());
                 },
                 style: ElevatedButton.styleFrom(
-                    minimumSize: Size.fromHeight(50),
+                    minimumSize: const Size.fromHeight(50),
                     backgroundColor: Colors.blueAccent,
                     shadowColor: Colors.blueGrey,
                     elevation: 10),
-                child: Text(
+                child: const Text(
                   'MASUK',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Color.fromARGB(255, 100, 43, 43)),
                 ))
           ],
         ),
